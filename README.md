@@ -35,17 +35,42 @@ Wizzy is currently in development (D1.0.0), and this is the feature list:
 - Text in Notes
 - Colour Code
 - Priority
+## Configs
+- Configurations
 ## Plugins
 - Teamup
-- Fetch training days
 - Clash warning
 - Aliases
 - GKit
 
 ## More on Plugins
 ### Aliases
-- Create, use, switch, discard secured aliases
+Namespace: `alias`
+
+Create, use, switch, discard secured aliases. Aliases are like accounts and they are linked to your email address.
+
+### Teamup
+Namespace: `teamup`
 
 
+### Clash warning
+Namespace: `cwarn`
+
+Warn of clash in task/event scheduling. Can be configured via:
+```
+wiz config --plugin cwarn "warn:tasks,events"
+```
+
+### GKit
+Namespace: `gkit`
+
+Everyone's favourite web tools are now accessible via Wiz X. Through the GKit plugin, you need to sign in to your Google Account and create automations to create, modify, and delete Google Documents. Activate it via:
+```
+wiz init --plugin gkit
+```
+and the bot will send you a private message asking for your email address and password. In this private message, you can also add collaborators with:
+```
+wiz !gkit add collaborators "<emailAddress>:<password>,..."
+```
 
 
