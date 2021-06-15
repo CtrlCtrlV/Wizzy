@@ -1,12 +1,9 @@
 # pip install discord.py
-# pip install python-dotenv
 # pip install datetime
 """
 import os
 from utils import *
-from dotenv import load_dotenv
-load_dotenv()
-botToken = os.getenv('DISCORDBOTTOKEN')
+botToken = os.environ['BOTTOKEN']
 bot = discord.Client()
 vconsole = []
 
@@ -23,3 +20,5 @@ async def on_message(Message):
 
 bot.run(botToken)
 """
+
+
