@@ -42,6 +42,7 @@ Wizzy is currently in development (D1.0.0), and this is the feature list:
 - Clash warning
 - Aliases
 - GKit
+- Remote Listener
 
 ## More on Plugins
 ### Aliases
@@ -72,5 +73,7 @@ and the bot will send you a private message asking for your email address and pa
 ```
 wiz !gkit add collaborators "<emailAddress>:<password>,..."
 ```
+### Remote Listener
+Namespace: `reml`
 
-
+If you are working with text files (code, txt, rtf, md, etc.), then this plugin is for you. It allows you to track changes to files and the people making those changes, just by creating a minion (remote listener) in that directory.
