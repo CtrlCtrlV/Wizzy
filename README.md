@@ -39,7 +39,11 @@ Wizzy is currently in development (D1.0.0), and this is the feature list:
 - Teamup
 - Fetch training days
 - Clash warning
-## Aliases
+- Aliases
+- GKit
+
+## More on Plugins
+### Aliases
 - Create, use, switch, discard secured aliases
 
 

@@ -5,3 +5,9 @@ def checkForUpdates():
 
 def validatePlugin():
   pass
+
+def installUpdates(update):
+    pass
+
+def installPlugin(plugin):
+    pass
