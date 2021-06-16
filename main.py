@@ -4,6 +4,7 @@
 # pip install airtable
 
 import os
+import asyncio
 from utils import *
 import discord
 botToken = os.environ['BOTTOKEN']
