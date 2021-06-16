@@ -77,3 +77,15 @@ wiz !gkit add collaborators "<emailAddress>:<password>,..."
 Namespace: `reml`
 
 If you are working with text files (code, txt, rtf, md, etc.), then this plugin is for you. It allows you to track changes to files and the people making those changes, just by creating a minion (remote listener) in that directory.
+
+
+
+# Documentation
+
+## Tap
+```
+wiz tap <your custom string here>
+```
+`customString`: the string to be echoed by the bot (can contain spaces)
+
+The first command root, tap, is used as a sanity check to test if the bot is working at all. Your custom string, spanning multiple lines, will be echoed by the bot if everything is ok.
