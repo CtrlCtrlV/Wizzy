@@ -2,7 +2,7 @@
 # pip install datetime
 # pip install requests
 # pip install airtable
-"""
+
 import os
 from utils import *
 botToken = os.environ['BOTTOKEN']
@@ -22,6 +22,6 @@ async def on_message(Message):
 
 
 bot.run(botToken)
-"""
+
 
 
