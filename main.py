@@ -19,7 +19,7 @@ async def on_message(Message):
   send("Hello")
   # more code here
 
-
+  msg.channel.send("IM ONLINE")
 
 bot.run(botToken)
 
