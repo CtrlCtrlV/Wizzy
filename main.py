@@ -12,15 +12,15 @@ vconsole = []
 LKE = "Client request reached bot servers, awaiting handle"
 
 @bot.event
+async def on_ready():
+    print('Wiz Online!')
 async def on_message(Message):
   msg = Message.content
   def send(message):
     msg.channel.send(message)
-  print("Message received"+msg)
-  send("Hello")
+  send("Message received:"+msg)
   # more code here
 
-  msg.channel.send("IM ONLINE")
 
 bot.run(botToken)
 
