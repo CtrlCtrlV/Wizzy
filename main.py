@@ -17,7 +17,7 @@ async def on_ready():
     await bot.get_channel(850712941031325720).send("Wiz is online")
 async def on_message(Message):
   msg = Message.content
-  Message.channel.send("Message received: "+msg)
+  await Message.channel.send("Message received: "+msg)
 
   # more code here
 
