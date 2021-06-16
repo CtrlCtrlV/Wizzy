@@ -18,7 +18,7 @@ async def on_ready():
 async def on_message(Message):
   msg = Message.content
   def send(message):
-    msg.channel.send(message)
+    Message.channel.send(message)
   send("Message received:"+msg)
   # more code here
 
