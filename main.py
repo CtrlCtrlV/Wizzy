@@ -15,7 +15,7 @@ LKE = "Client request reached bot servers, awaiting handle"
 
 @bot.event
 async def on_ready():
-    bot.get_channel("850712941031325720").send("Wiz is online")
+    await bot.get_channel(850712941031325720).send("Wiz is online")
 async def on_message(Message):
   msg = Message.content
   
