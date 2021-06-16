@@ -5,6 +5,7 @@
 
 import os
 from utils import *
+import discord
 botToken = os.environ['BOTTOKEN']
 bot = discord.Client()
 vconsole = []
