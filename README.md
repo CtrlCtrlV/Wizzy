@@ -52,36 +52,27 @@ Create, use, switch, discard secured aliases. Aliases are like accounts and they
 
 ### Teamup
 Namespace: `teamup`
+Interact with Teamup API to fetch calendar events.
 
 
 ### Clash warning
 Namespace: `cwarn`
 
 Warn of clash in task/event scheduling. Can be configured via:
-```
-wiz config --plugin cwarn "warn:tasks,events"
-```
 
 ### GKit
 Namespace: `gkit`
 
-Everyone's favourite web tools are now accessible via Wiz X. Through the GKit plugin, you need to sign in to your Google Account and create automations to create, modify, and delete Google Documents. Activate it via:
-```
-wiz init --plugin gkit
-```
-and the bot will send you a private message asking for your email address and password. In this private message, you can also add collaborators with:
-```
-wiz !gkit add collaborators "<emailAddress>:<password>,..."
-```
+Everyone's favourite web tools are now accessible via Wiz X. Through the GKit plugin, you need to sign in to your Google Account and create automations to create, modify, and delete Google Documents.
+
 ### Remote Listener
 Namespace: `reml`
 
 If you are working with text files (code, txt, rtf, md, etc.), then this plugin is for you. It allows you to track changes to files and the people making those changes, just by creating a minion (remote listener) in that directory.
 
 
-
 # Documentation
-
+Do note that even though the documentation uses "wiz" for all the commands, replacing "wiz" with "orto" at the start will make no difference.
 ## Tap
 ```
 wiz tap <your custom string here>
@@ -89,3 +80,18 @@ wiz tap <your custom string here>
 `customString`: the string to be echoed by the bot (can contain spaces)
 
 The first command root, tap, is used as a sanity check to test if the bot is working at all. Your custom string, spanning multiple lines, will be echoed by the bot if everything is ok.
+
+## Configurations
+```
+wiz config "<key>:<value>"
+```
+`key`: Key of the configuration to change
+
+`value`: value of the new configuration
+
+`-plugin`: raise this flag between config and the key value pair only if you need to configure a plugin:
+```shell
+wiz config -plugin "<key>:<value>"
+```
+
+You can use this to modify wizard configurations, plugin configurations, and 

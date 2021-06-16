@@ -25,7 +25,7 @@ async def on_ready():
     await bot.get_channel(850712941031325720).send("Wiz is online")
 @bot.event
 async def on_message(Message):
-    if Message.author == bot.user:
+    if Message.author == bot.user or Message.author==854632030793236480:
         return
     msg = Message.content
     async def send(sendMessage):
