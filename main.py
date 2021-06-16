@@ -8,7 +8,6 @@ import asyncio
 from utils import *
 import discord
 botToken = os.environ['BOTTOKEN']
-guildID = os.environ['GUILDID']
 bot = discord.Client()
 vconsole = []
 LKE = "Client request reached bot servers, awaiting handle"
