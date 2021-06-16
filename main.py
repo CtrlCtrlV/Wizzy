@@ -21,7 +21,7 @@ async def on_message(Message):
 
   msg.channel.send("IM ONLINE")
 
-bot.login(botToken)
+bot.run(botToken)
 
 
 
