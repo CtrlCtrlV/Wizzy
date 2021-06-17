@@ -40,7 +40,11 @@ async def on_message(Message):
         await commands.tap(" ".join(incomingRawArr), Message)
     elif root=="add":
         del incomingRawArr[0]
-        export = await commands.add(incomingRawArr, Message)
+        export = await commands.addTask(incomingRawArr, Message)
+        await send(str(export))
+    elif root=="remember":
+        del incomingRawArr[0]
+        export = await commands.addEvent(incomingRawArr, Message)
         await send(str(export))
 ######################################    
 

@@ -1,10 +1,12 @@
 import db
 import plugins
+from datetime import datetime
+import dateparser 
 
 async def tap(args, msObject):
     await msObject.channel.send(args)
 
-async def add(args,msObject):
+async def addTask(args,msObject):
     # declare all variables
     taskName  = ""
     dueDate = ""
@@ -71,5 +73,49 @@ async def add(args,msObject):
     }
     return taskObject
 
-
-
+async def addEvent(args, msObject):
+    eventName = ""
+    colour = ""
+    notes = ""
+    dDate = ""
+    tme = ""
+    nameState = False
+    for i in args:
+        if '"' in i and nameState == False:
+            nameState = True
+            eventName += i.replace('"',"")
+        elif '"' in i and nameState == True:
+            nameState = False
+            eventName += " " +i.replace('"', "")
+        elif nameState == True and '"' not in i:
+            eventName += " "+i
+    # eventName
+    for i in args:
+        if "time:" in i:
+            tme = int(i.replace('time:',''))
+    # tme
+    for i in args:
+        if "date:" in i:
+            dDate = str(i.replace("date:",""))
+            superDate = str(dateparser.parse(dDate).strftime("%d/%b/%Y %H%M"))
+        # %d/%b/%Y %H%M
+    # superDate
+    for i in args:
+        if "$" in i:
+            colour = i.replace("$","")
+    # colour
+    noteState = False
+    for i in args:
+        if i.lower()=="notes:":
+            noteState = True
+        elif noteState == True:
+            notes += " " + i
+    # notes
+    eventObject = {
+        "name":eventName,
+        "date": str(superDate),
+        "time": tme,
+        "notes":notes,
+        "colour":colour
+    }
+    return eventObject
