@@ -95,6 +95,12 @@ Namespace: `reactor`
 When Wizzy lists out your tasks as separate messages, you can use quick reactions such as a checkmark or clock emoji to mark the task as done or open up rescheduling options.
 
 
+### Mailbox
+Namespace: `mbox`
+
+Set up a listener for your GMail inbox to notify you of special mail, such as a Google Classroom notification. Triggers include sender, title, content, and can be configured.
+
+
 # Documentation
 Do note that even though the documentation uses "wiz" for all the commands, replacing "wiz" with "orto" at the start will make no difference.
 ## Tap
