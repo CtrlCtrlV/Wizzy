@@ -55,7 +55,9 @@ async def on_message(Message):
                 del incomingRawArr[0]
                 export = await commands.viewTasksbyDue(incomingRawArr, Message)
                 await send(str(export))
-
+    elif root=="dbtest":
+        import db
+        await db.fetch(1,"")
 ######################################    
 
 bot.run(botToken)
