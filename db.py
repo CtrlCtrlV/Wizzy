@@ -35,25 +35,26 @@ async def fetch(keysValue, path="", getRec=False):
 ]
     """
     for i in results:
-        if getRec:
-            return i['id']
         if i['fields']['keys']==keysValue:
+            if getRec:
+                return i['id']
             if path !="":
                 return keysValue[path]
             else:
                 return i['fields']['values']
 
 async def update(keysValue, valuesValue):
-    
-    at.update("main")
+    compFields = {
+        'values':valuesValue,
+    }
+    at.update(await fetch(keysValue,'',True),compFields)
 
 async def create(keysValue, valuesValue):
-    at.create("main",{
-    "fields": {
-      "keys": keysValue,
-      "values": str(valuesValue)
+    compFields = {
+        'keys':keysValue,
+        'values':valuesValue
     }
-  })
+    at.insert(compFields)
 
 async def destroy(keysValue):
-    pass
+    at.delete(await fetch(keysValue,'',True))

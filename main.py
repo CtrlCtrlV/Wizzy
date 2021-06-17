@@ -35,6 +35,8 @@ async def on_message(Message):
     if incomingRaw.startswith("wiz") or incomingRaw.startswith("orto"):
         del incomingRawArr[0]
     root = incomingRawArr[0]
+    if root=="thankyou" or root=="thank":
+        await send("You're Welcome!")
     if root == "tap":
         del incomingRawArr[0]
         await commands.tap(" ".join(incomingRawArr), Message)
@@ -55,9 +57,18 @@ async def on_message(Message):
                 del incomingRawArr[0]
                 export = await commands.viewTasksbyDue(incomingRawArr, Message)
                 await send(str(export))
-    elif root=="dbtest":
+    elif root=="db":
         import db
-        await db.fetch(1,"")
+        del incomingRawArr[0]
+        if incomingRawArr[0]=="create":
+            await db.create('createdKey','Hello')
+        elif incomingRawArr[0]=="get":
+            await db.fetch('tap', 'tapOn',False)
+        elif incomingRawArr[0]=="update":
+            await db.update('createdKey', 'updatedValue')
+        elif incomingRawArr[0]=="delete":
+            await db.destroy('createdKey')
+        
 ######################################    
 
 bot.run(botToken)
