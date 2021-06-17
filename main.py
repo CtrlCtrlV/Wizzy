@@ -40,7 +40,8 @@ async def on_message(Message):
         await commands.tap(" ".join(incomingRawArr), Message)
     elif root=="add":
         del incomingRawArr[0]
-        await commands.add(incomingRawArr, Message)
+        export = await commands.add(incomingRawArr, Message)
+        await send(str(export))
 ######################################    
 
 bot.run(botToken)
