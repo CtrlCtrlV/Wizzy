@@ -46,6 +46,16 @@ async def on_message(Message):
         del incomingRawArr[0]
         export = await commands.addEvent(incomingRawArr, Message)
         await send(str(export))
+    elif root=="show":
+        if incomingRawArr[1]=="tasks":
+            if incomingRawArr[2]=="$due":
+                del incomingRawArr[0]
+                del incomingRawArr[0]
+                del incomingRawArr[0]
+                del incomingRawArr[0]
+                export = await commands.viewTasksbyDue(incomingRawArr, Message)
+                await send(str(export))
+
 ######################################    
 
 bot.run(botToken)

@@ -97,8 +97,8 @@ async def addEvent(args, msObject):
     for i in args:
         if "date:" in i:
             dDate = str(i.replace("date:",""))
-            superDate = str(dateparser.parse(dDate).strftime("%d/%b/%Y %H%M"))
-        # %d/%b/%Y %H%M
+            superDate = str(dateparser.parse(dDate).strftime("%d/%m/%Y %H%M"))
+        # 13/06/2021 1359
     # superDate
     for i in args:
         if "$" in i:
@@ -119,3 +119,44 @@ async def addEvent(args, msObject):
         "colour":colour
     }
     return eventObject
+
+async def viewAllTasks(args, msObject):
+    pass 
+
+async def viewTasksbyDue(args, msObject):
+    # get data from database
+    unsortedDates = []
+    data = [
+        {'name': 'event X',
+        'date': '18/06/2021 0757',
+        'time': 1234,
+        'notes':
+        ' my notes here',
+        'colour': 'red'
+        },
+        {'name': 'event Y',
+        'date': '18/06/2022 0757',
+        'time': 1234,
+        'notes':
+        ' my notes here',
+        'colour': 'red'
+        },
+        {'name': 'event Z',
+        'date': '20/06/2021 0757',
+        'time': 1234,
+        'notes':
+        ' my notes here',
+        'colour': 'red'
+        }
+        ]
+    for i in data:
+        thisDate = i['date']
+        unsortedDates.append(thisDate)
+    unsortedDates.sort(key = lambda date: datetime.strptime(date, '%d %b %Y'))
+    dates =  ["23 Jun 2018", "2 Dec 2017", "11 Jun 2018", 
+              "01 Jan 2019", "10 Jul 2016", "01 Jan 2007"]  
+      
+    # Sort the list in ascending order of dates 
+    sortedDates = dates.sort(key = lambda dat: datetime.strptime(dat, '%d/%m/%Y %H%M'))
+    print(sortedDates)
+    return sortedDates
