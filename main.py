@@ -30,9 +30,6 @@ async def on_message(Message):
     msg = Message.content
     async def send(sendMessage):
         await Message.channel.send(sendMessage)
-    if Message.author==854691497798533140:
-        await Message.channel.send("no.")
-        return
     incomingRaw = msg
     incomingRawArr = msg.split(" ")
     if incomingRaw.startswith("wiz") or incomingRaw.startswith("orto"):
@@ -41,6 +38,9 @@ async def on_message(Message):
     if root == "tap":
         del incomingRawArr[0]
         await commands.tap(" ".join(incomingRawArr), Message)
+    elif root=="add":
+        del incomingRawArr[0]
+        await commands.add(incomingRawArr)
 ######################################    
 
 bot.run(botToken)

@@ -11,8 +11,10 @@ Apache Wizard or “Wizzy” is a personal assistant designed and built by Apach
 
 Wizzy can be interacted with via text through the Discord platform, but also has a Siri Plugin to enable voice-based commands for iOS.
 
-# Wiz X1.0 Features
-Wizzy is currently in development (D1.0.0), and this is the feature list:
+---
+
+# Wiz X Features
+Wizzy is currently in development (D1.0.0), but this is the complete feature list:
 ## Task Tracking Engine
 - Name
 - Due Date
@@ -44,6 +46,23 @@ Wizzy is currently in development (D1.0.0), and this is the feature list:
 - GKit
 - Remote Listener
 
+---
+
+# Wiz X1 Features
+
+These are the features of Wiz X v1:
+
+- Task Tracking
+    - Add task
+    - View tasks (All)
+    - Modify Task
+- Event Tracking
+    - Add events 
+    - Modify Event 
+    - View Events (All)
+
+---
+
 ## More on Plugins
 ### Aliases
 Namespace: `alias`
@@ -69,6 +88,11 @@ Everyone's favourite web tools are now accessible via Wiz X. Through the GKit pl
 Namespace: `reml`
 
 If you are working with text files (code, txt, rtf, md, etc.), then this plugin is for you. It allows you to track changes to files and the people making those changes, just by creating a minion (remote listener) in that directory.
+
+### Reaction Engine
+Namespace: `reactor`
+
+When Wizzy lists out your tasks as separate messages, you can use quick reactions such as a checkmark or clock emoji to mark the task as done or open up rescheduling options.
 
 
 # Documentation

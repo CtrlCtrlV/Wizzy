@@ -20,10 +20,32 @@ Development Versions: X1.0.0
 ## Wiz X1.0.0
 
 ### General
-Bot Online: False
+Maintenance: True
 
 Known Bugs: -none-
+
+Support: 30 Jun 2021
 
 ### Notice
 - All plugins unavailable
 - All features unavailable
+---
+## Wiz X2.0.0
+
+### General
+Maintenance: False
+
+Known Bugs: -none-
+
+Support: 30 July 2021
+
+### Notice
+- All plugins unavailable
+- All features unavailable
+
+---
+
+# Changelog
+
+## X1.0.0 >> X1.1.0
+---
