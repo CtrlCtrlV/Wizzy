@@ -27,9 +27,9 @@ async def on_message(Message):
     async def send(sendMessage):
         if type(sendMessage['msg']) is list:
             for i in sendMessage['msg']:
-                Message.channel.send(i)
+                await Message.channel.send(i)
         elif type(sendMessage['msg']) is str:
-            Message.channel.send(sendMessage['msg'])
+            await Message.channel.send(sendMessage['msg'])
         # postProcesseses
 
     if Message.author == bot.user:
