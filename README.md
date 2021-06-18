@@ -100,6 +100,18 @@ Namespace: `mbox`
 
 Set up a listener for your GMail inbox to notify you of special mail, such as a Google Classroom notification. Triggers include sender, title, content, and can be configured.
 
+### RXec
+Namespace: `rxec`
+
+Execute native, small quantities of code and get the output via the RXec plugin.
+
+### OpenConsole
+Namespace: `opcons`
+
+A read-only console which is updated live on the bot's status and actions. Whenever an action is run, you can see the console being updated live. One global flag is also available:`.V`, which executes the command and sends all console logs to the channel. Command to expose console is also available, which freezes the console and sends the static console to the channel.
+
+[Docs](./Extra_Docs/PluginName.md)
+
 
 # Documentation
 Do note that even though the documentation uses "wiz" for all the commands, replacing "wiz" with "orto" at the start will make no difference.
