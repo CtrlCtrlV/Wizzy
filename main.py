@@ -49,7 +49,7 @@ async def on_message(Message):
         await send({"msg":"You're Welcome!"})
     if root == "tap":
         del incomingRawArr[0]
-        await send(commands.tap(" ".join(incomingRawArr), Message))
+        await send(await commands.tap(" ".join(incomingRawArr), Message))
     elif root=="add":
         del incomingRawArr[0]
         await send(commands.addTask(incomingRawArr, Message))
