@@ -24,3 +24,5 @@ Simple, you reference the plugin (`!rxec`), declare the language(`js`), right ch
 > *A new line is replaced with a space.*
 
 ## Version Log
+
+### v1.0.0

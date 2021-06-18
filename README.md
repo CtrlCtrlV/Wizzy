@@ -123,6 +123,11 @@ Namespace:`pkgr`
 
 Have you ever shared files over Discord, only to get hit with the "Files are Too Powerful" message? Well, this plugin solves that for you. It creats a link to the document you share, and the link expires after a certain interval. It also gives you the Package ID, so you can perform actions such as deleting the package.
 
+### ForMat
+Namespace: `fmat`
+
+Since it's plaintext, we might as well make it pretty. This plugin makes Wiz use syntax highlighting where possible to send better formatted messages.
+
 # Documentation
 Do note that even though the documentation uses "wiz" for all the commands, replacing "wiz" with "orto" at the start will make no difference.
 ## Tap
