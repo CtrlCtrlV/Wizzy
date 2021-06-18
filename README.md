@@ -112,6 +112,10 @@ A read-only console which is updated live on the bot's status and actions. Whene
 
 [Docs](./Extra_Docs/PluginName.md)
 
+### Packager
+Namespace:`pkgr`
+
+Have you ever shared files over Discord, only to get hit with the "Files are Too Powerful" message? Well, this plugin solves that for you. It creats a link to the document you share, and the link expires after a certain interval. It also gives you the Package ID, so you can perform actions such as deleting the package.
 
 # Documentation
 Do note that even though the documentation uses "wiz" for all the commands, replacing "wiz" with "orto" at the start will make no difference.
