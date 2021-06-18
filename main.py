@@ -25,20 +25,22 @@ async def on_ready():
 @bot.event
 async def on_message(Message):
     async def send(sendMessage):
+        await Message.channel.send(sendMessage)
+        """"
         if type(sendMessage['msg']) is list:
             for i in sendMessage['msg']:
                 await Message.channel.send(i)
         elif type(sendMessage['msg']) is str:
             await Message.channel.send(sendMessage['msg'])
         # postProcesseses
-
+        """
     if Message.author == bot.user:
         return
 
     msg = Message.content
     incomingRaw = msg
     incomingRawArr = msg.split(" ")
-    if Message.author=="855392496715431976" and "-i" not in msg:
+    if Message.author.id=="745178736982360114" and "-i" not in msg:
         return
     if incomingRaw.startswith("wiz") or incomingRaw.startswith("orto"):
         del incomingRawArr[0]
