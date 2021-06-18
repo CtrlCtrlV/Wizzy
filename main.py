@@ -38,7 +38,7 @@ async def on_message(Message):
     msg = Message.content
     incomingRaw = msg
     incomingRawArr = msg.split(" ")
-    if Message.author.id==855392496715431976 and "-i" not in msg:
+    if Message.author.id=="855392496715431976" and "-i" not in msg:
         return
     if incomingRaw.startswith("wiz") or incomingRaw.startswith("orto"):
         del incomingRawArr[0]
