@@ -68,10 +68,12 @@ These are the features of Wiz X v1:
 ---
 
 ## More on Plugins
-### Aliases
-Namespace: `alias`
+### ~~Aliases~~
+~~Namespace: `alias`~~
 
-Create, use, switch, discard secured aliases. Aliases are like accounts and they are linked to your email address.
+~~Create, use, switch, discard secured aliases. Aliases are like accounts and they are linked to your email address.~~
+
+> Depracated as of v1. See plugin documentation for more information.
 
 ### Teamup
 Namespace: `teamup`
