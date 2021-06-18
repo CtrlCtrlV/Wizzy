@@ -13,6 +13,10 @@ Wizzy can be interacted with via text through the Discord platform, but also has
 
 ---
 
+# Install
+
+> Wizzy is still in development, and installation is not available yet. However, we are targeting to deploy by 28 June 2021, and the installation link will be available then.
+
 # Wiz X Features
 Wizzy is currently in development (D1.0.0), but this is the complete feature list:
 ## Task Tracking Engine
