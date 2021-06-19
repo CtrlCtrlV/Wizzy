@@ -7,8 +7,10 @@ import os
 import utils
 import discord
 import commands
+import json
 botToken = os.environ['BOTTOKEN']
 bot = discord.Client()
+import db
 
 # DECLARING MAIN VARIABLES
 vconsole = []
@@ -16,15 +18,20 @@ LKE = "Client request reached bot servers, awaiting handle"
 incomingRaw = ""
 incomingRawArr = []
 root = ""
+thisChannel = 850712941031325720
 #####################################
 
 # CREATING EVENTS
 @bot.event
 async def on_ready():
-    await bot.get_channel(850712941031325720).send("Wiz is online")
+    await bot.get_channel(thisChannel).send("Wiz is online")
+    if await db.fetch("versionControl","firstInstall",False)=="True":
+        from init import runFirstInstallScript
+        for i in await runFirstInstallScript():
+            await bot.get_channel(thisChannel).send(i)
+        # only update DB first install status after all values are ok
 @bot.event
 async def on_message(Message):
-    print(Message.author.id)
     async def send(sendMessage):
         await Message.channel.send(sendMessage)
         """"

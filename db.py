@@ -1,4 +1,5 @@
 import os
+import json
 from airtable import Airtable
 BASEID = os.environ['DBKEY']
 BASEKEY = os.environ['DBPASS']
@@ -35,13 +36,14 @@ async def fetch(keysValue, path="", getRec=False):
 ]
     """
     for i in results:
-        if i['fields']['keys']==keysValue:
+        x = i
+        if x['fields']['keys']==keysValue:
             if getRec:
-                return i['id']
+                return x['id']
             if path !="":
-                return keysValue[path]
+                return json.loads(i['fields']['values'])[path]
             else:
-                return i['fields']['values']
+                return x['fields']['values']
 
 async def update(keysValue, valuesValue):
     compFields = {

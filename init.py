@@ -1,9 +1,5 @@
-def runFirstInstallScript(msObject):
-    async def send(message):
-        await msObject.channel.send(message)
-    await send("""Hey, there! I'm Wiz, your personal assistant. Let's setup some stuff, shall we?
-    """)
-    await send("""
+async def runFirstInstallScript():
+    return ["""Hey, there! I'm Wiz, your personal assistant. Let's setup some stuff, shall we?""","""
 -----------
 1 of 3
 -----------
@@ -16,4 +12,4 @@ Thanks!
 
 2. How would you like to be addressed? (Default: User)
 >>
-    """)
+"""]
