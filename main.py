@@ -35,6 +35,8 @@ async def on_ready():
 @bot.event
 async def on_message(Message):
     log("bot event triggered")
+    async def hypersend(sendMsg):
+        await Message.channel.send(sendMsg)
     async def send(sendMessage):
         await Message.channel.send(sendMessage)
         """"
@@ -101,7 +103,7 @@ async def on_message(Message):
             await db.destroy('createdKey')
     else:
         log("unkown root '"+root+"' ","e")
-        await send({'msg':str(utils.error('Invalid Root','The root used "'+str(root)+'" is invalid (does not exist).','main.py >> root handler','Read the docs for more information, or check your plugin documentation if you have attempted to command a plugin'))})
+        await hypersend({'msg':str(error('Invalid Root','The root used "'+str(root)+'" is invalid (does not exist).','main.py >> root handler','Read the docs for more information, or check your plugin documentation if you have attempted to command a plugin'))})
         # need smarter error handling such as checking if a plugin was used
     log("execution complete")
     # check plugins 
