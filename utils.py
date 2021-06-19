@@ -1,9 +1,18 @@
 from datetime import date
 vconsole = []
-def log(text):
+def log(text, flag=""):
   now = date.today()
   timestamp = now.strftime("%H:%M:%S >> ")
-  vconsole.append(str(timestamp)+str(text))
+  if flag =="":
+        vconsole.append(str(timestamp)+str(text))
+  elif flag=="w":
+        vconsole.append(str(timestamp)+":warning: "+str(text))
+  elif flag=="e":
+        vconsole.append(str(timestamp)+":no_entry: "+str(text))
+  else:
+      vconsole.append(str(timestamp)+":gear: "+str(text))
+    
+
 def error(title, msg,where,fix):
     construct ="""
 |=========
