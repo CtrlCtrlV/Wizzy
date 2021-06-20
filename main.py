@@ -26,15 +26,19 @@ thisChannel = 850712941031325720
 async def on_ready():
     await bot.get_channel(thisChannel).send("Wiz is online")
     log("wiz is now online")
+    log("verscon checking for updates")
     if await db.fetch("versionControl","firstInstall",False)=="True":
-        log("checked verscon for firstInstall > false")
+        log("checked verscon for firstInstall > true")
+        log("@verscon running firstInstall script","w")
         from init import runFirstInstallScript
         for i in await runFirstInstallScript():
             await bot.get_channel(thisChannel).send(i)
+        log("@verscon firstInstall script > success")
+    else:
+        log("checked verscon for firstInstall > false")
         # only update DB first install status after all values are ok
 @bot.event
 async def on_message(Message):
-    log("bot event triggered")
     async def hypersend(sendMsg):
         await Message.channel.send(sendMsg['msg'])
     async def send(sendMessage):
@@ -55,9 +59,11 @@ async def on_message(Message):
     incomingRawArr = msg.split(" ")
     blacklist = [855400651764662282, 745178736982360114, "855400651764662282","745178736982360114"]
     if Message.author.id in blacklist and " -i " not in msg:
+        log("bot event triggered")
         log("ignoring blacklisted user "+str(Message.author.id))
         return
     if incomingRaw.startswith("wiz") or incomingRaw.startswith("orto"):
+        log("bot event triggered")
         del incomingRawArr[0]
     else:
         return
