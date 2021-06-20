@@ -3,6 +3,7 @@ vconsole = []
 def log(text, flag=""):
   now = date.today()
   timestamp = now.strftime("%H:%M:%S >> ")
+  
   if flag =="":
         vconsole.append(str(timestamp)+str(text))
   elif flag=="w":

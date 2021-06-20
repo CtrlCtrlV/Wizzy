@@ -107,7 +107,8 @@ async def on_message(Message):
         # need smarter error handling such as checking if a plugin was used
     log("execution complete")
     # check plugins 
-    print("\n".join(utils.vconsole))
+    print("\n".join(vconsole))
+    await send("VIRTUAL CONSOLE:")
     await send("\n".join(utils.vconsole))
         
     
