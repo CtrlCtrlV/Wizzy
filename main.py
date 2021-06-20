@@ -109,7 +109,7 @@ async def on_message(Message):
     # check plugins 
     print("\n".join(vconsole))
     await send("VIRTUAL CONSOLE:")
-    await send("\n".join(utils.vconsole))
+    await send("\n".join(vconsole))
         
     
 ######################################    
