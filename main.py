@@ -91,6 +91,11 @@ async def on_message(Message):
                 del incomingRawArr[0]
                 del incomingRawArr[0]
                 await send(commands.viewTasksbyDue(incomingRawArr, Message))
+            else:
+                del incomingRawArr[0]
+                del incomingRawArr[0]
+                await send(commands.taskOverview(incomingRawArr, Message))
+
     # DEBUGGING PORT
     elif root=="db":
         del incomingRawArr[0]

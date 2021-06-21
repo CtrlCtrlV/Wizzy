@@ -13,7 +13,14 @@ async def completeTask(args, msObject):
     for i in dat['tasks']:
         if i==args[0]:
             pass
-
+async def tasksOverview(args,msObject):
+    result = await db.fetch('tasks','',False)['tasks']
+    for i in result:
+        template = """{}
+    {}              {}
+    {}              {}
+""".format(i['name'],i['dueDate'],i['list'],i['assignedDate']," ".join(i['tags']))
+        msObject.channel.send(template)
 
 async def addTask(args,msObject):
     log("beginning command execution")
