@@ -64,6 +64,10 @@ These are the features of Wiz X v1:
     - Add events 
     - Modify Event 
     - View Events (All)
+- Overview
+    - Due date
+    - Assigned date
+
 
 ---
 
