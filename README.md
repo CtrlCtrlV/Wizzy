@@ -68,7 +68,6 @@ These are the features of Wiz X v1:
     - Due date
     - Assigned date
 
-
 ---
 
 ## More on Plugins
