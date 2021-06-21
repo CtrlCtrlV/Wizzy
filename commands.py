@@ -7,6 +7,14 @@ import dateparser
 async def tap(args, msObject):
     await msObject.channel.send(args)
 
+async def completeTask(args, msObject):
+    log("beginning command execution")
+    dat = await db.fetch("tasks","",False)
+    for i in dat['tasks']:
+        if i==args[0]:
+            pass
+
+
 async def addTask(args,msObject):
     log("beginning command execution")
     # declare all variables

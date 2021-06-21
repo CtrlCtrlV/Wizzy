@@ -57,11 +57,7 @@ async def on_message(Message):
     msg = Message.content
     incomingRaw = msg
     incomingRawArr = msg.split(" ")
-    blacklist = [855400651764662282, 745178736982360114, "855400651764662282","745178736982360114"]
-    if Message.author.id in blacklist and " -i " not in msg:
-        log("bot event triggered")
-        log("ignoring blacklisted user "+str(Message.author.id))
-        return
+    # deleted
     if incomingRaw.startswith("wiz") or incomingRaw.startswith("orto"):
         log("bot event triggered")
         del incomingRawArr[0]
@@ -97,7 +93,6 @@ async def on_message(Message):
                 await send(commands.viewTasksbyDue(incomingRawArr, Message))
     # DEBUGGING PORT
     elif root=="db":
-        import db
         del incomingRawArr[0]
         if incomingRawArr[0]=="create":
             await db.create('createdKey','Hello')
@@ -107,6 +102,9 @@ async def on_message(Message):
             await db.update('createdKey', 'updatedValue')
         elif incomingRawArr[0]=="delete":
             await db.destroy('createdKey')
+    elif root=="complete":
+        del incomingRawArr[0]
+        commands.completeTask(incomingRawArr, Messsage)
     else:
         log("unkown root '"+root+"' ","e")
         await hypersend({'msg':str(error('Invalid Root','The root used "'+str(root)+'" is invalid (does not exist).','main.py >> root handler','Read the docs for more information, or check your plugin documentation if you have attempted to command a plugin'))})
