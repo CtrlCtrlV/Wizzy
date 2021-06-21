@@ -82,19 +82,18 @@ async def on_message(Message):
         await send(commands.addEvent(incomingRawArr, Message))
     elif root=="show":
         log("valid root '"+root+"' identified")
+        del incomingRawArr[0]
         if incomingRawArr[1]=="tasks":
+            del incomingRawArr[0]
+            if incomingRawArr=[]:
+                await commands.taskOverview(incomingRawArr, Message)
             log("valid command '"+incomingRawArr[1]+"' identified")
-            if incomingRawArr[2]=="$due":
-                log("valid arg '"+incomingRawArr[2]+"' identified")
-                del incomingRawArr[0]
-                del incomingRawArr[0]
-                del incomingRawArr[0]
+            elif incomingRawArr[0]=="$due":
+                log("valid arg '"+incomingRawArr[0]+"' identified")
                 del incomingRawArr[0]
                 await send(commands.viewTasksbyDue(incomingRawArr, Message))
             else:
-                del incomingRawArr[0]
-                del incomingRawArr[0]
-                await send(commands.taskOverview(incomingRawArr, Message))
+                # error
 
     # DEBUGGING PORT
     elif root=="db":
